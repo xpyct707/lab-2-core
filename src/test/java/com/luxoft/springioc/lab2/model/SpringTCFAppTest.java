@@ -1,8 +1,4 @@
 package com.luxoft.springioc.lab2.model;
-import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,13 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.luxoft.springioc.lab2.model.Country;
-import com.luxoft.springioc.lab2.model.UsualPerson;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:application-context.xml")
 public class SpringTCFAppTest {
-	
 	@Autowired
 	private UsualPerson person;
 
@@ -25,7 +22,7 @@ public class SpringTCFAppTest {
 	
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		expectedPerson = getExpectedPerson();
 	}
 
@@ -39,7 +36,7 @@ public class SpringTCFAppTest {
 		UsualPerson person = new UsualPerson();
 		person.setAge(35);
 		person.setHeight(1.78F);
-		person.setIsProgrammer(true);
+		person.setProgrammer(true);
 		person.setName("Ivan Ivanov");
 
 		Country country = new Country();
@@ -49,7 +46,7 @@ public class SpringTCFAppTest {
 
 		person.setCountry(country);
 
-		List<String> contacts = new ArrayList<String>();
+		List<String> contacts = new ArrayList<>();
 		contacts.add("asd@asd.ru");
 		contacts.add("+7-234-456-67-89");
 
@@ -57,5 +54,4 @@ public class SpringTCFAppTest {
 
 		return person;
 	}
-
 }
