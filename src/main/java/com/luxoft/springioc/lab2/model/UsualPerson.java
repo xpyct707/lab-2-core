@@ -1,6 +1,7 @@
 package com.luxoft.springioc.lab2.model;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.util.List;
 
